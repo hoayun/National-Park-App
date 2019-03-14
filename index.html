@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
@@ -15,21 +16,23 @@
 
     
 
-    <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">three</a></li>
-        </ul>
+    
         <nav>
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo center">Logo</a>
+            <a href="#!" class="brand-logo center"><i class="large material-icons">fingerprint</i></a>
             <ul class="right hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-                        <!-- Dropdown Trigger -->
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right"></i></a></li>
             </ul>
+
+            <div class="dropdown">
+                    <button class="btn btn-flat dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Take me with | y o u
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
         </div>
         </nav>
 
@@ -37,17 +40,57 @@
         <div class="row">
 
             <div class="col-sm-4">
-               <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores similique voluptatibus unde, magni ipsum alias, cumque dignissimos ducimus, nemo tenetur earum debitis tempora! Voluptatibus eligendi iste deserunt exercitationem porro reiciendis!
+               <p> 
+                    <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                              <img class="activator" src="https://cbsnews1.cbsistatic.com/hub/i/2018/10/25/89f3a96b-2dcf-4055-a9a9-bdec0ad6e5d0/yosemite.jpg">
+                            </div>
+                            <div class="card-content">
+                              <span class="card-title activator grey-text text-darken-4">NAME OF STATE PARK<i class="material-icons right">more_vert</i></span>
+                              <p><a href="#">LETS | G O </a></p>
+                            </div>
+                            <div class="card-reveal">
+                              <span class="card-title grey-text text-darken-4">NAME OF STATE PARK<i class="material-icons right">close</i></span>
+                              <p>Here is some more information about this place.</p>
+                            </div>
+                          </div>
+                                    
                 </p>
             </div>
 
             <div class="col-sm-4">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi iste dolorum est dolores. Dolor ut amet harum ratione consectetur eius quasi et eum odio dolorem corporis sed, dolore adipisci placeat.
+                <p>
+                        <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                  <img class="activator" src="https://cbsnews1.cbsistatic.com/hub/i/2018/10/25/89f3a96b-2dcf-4055-a9a9-bdec0ad6e5d0/yosemite.jpg">
+                                </div>
+                                <div class="card-content">
+                                  <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i>NAME OF STATE PARK</span>
+                                  <p><a href="#">LETS | G O </a></p>
+                                </div>
+                                <div class="card-reveal">
+                                  <span class="card-title grey-text text-darken-4">NAME OF STATE PARK<i class="material-icons right">close</i></span>
+                                  <p>stuff about this place!</p>
+                                </div>
+                              </div>
                 </p>
                 </div>
 
             <div class="col-sm-4">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, possimus necessitatibus! Iusto, eum. Tempore, ex iusto ut explicabo illo commodi eligendi praesentium. Dolores voluptatum unde voluptates tempore iste non! Maxime?
+                <p>
+                        <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                  <img class="activator" src="https://cbsnews1.cbsistatic.com/hub/i/2018/10/25/89f3a96b-2dcf-4055-a9a9-bdec0ad6e5d0/yosemite.jpg">
+                                </div>
+                                <div class="card-content">
+                                  <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i>NAME OF STATE PARK</span>
+                                  <p><a href="#">LETS | G O </a></p>
+                                </div>
+                                <div class="card-reveal">
+                                  <span class="card-title grey-text text-darken-4">NAME OF STATE PARK<i class="material-icons right">close</i></span>
+                                  <p>stuff about this place!</p>
+                                </div>
+                              </div>
                 </p>
                 </div>
 
@@ -57,7 +100,10 @@
 
 
 
-
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

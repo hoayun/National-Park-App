@@ -4,7 +4,12 @@ nav {
 }
 
 body {
-    background-image: url("assets/images/647853.jpg");
+    background-image: url("assets/images/c6ba8fd886fee34e07122fa17a2de980.jpg");
     background-size: 100%, 100%;
-    
+      
 }
+
+.btn-flat {
+    color: white;
+}
+
