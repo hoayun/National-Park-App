@@ -1,3 +1,4 @@
+
 var stateList = [
     "AL",
     "AK",
@@ -50,7 +51,8 @@ var stateList = [
     "WI",
     "WY",
     "DC"
- ];
+
+];
  
  function renderButtons () {
  
@@ -58,49 +60,35 @@ var stateList = [
  
    var stateSel = $("<option>");
  //    stateSel.addClass("button")
+
    stateSel.attr("state-name", stateList[i]);
    stateSel.addClass("stateOption")
    stateSel.attr("value", stateList[i]);
    stateSel.text(stateList[i]);
    $(".form-control").append(stateSel);
- }
- 
- }
- renderButtons();
-    // $("#searchButton").on("click", function(event) {
- 
-    //     event.preventDefault();
- 
-    //     $("#button-display").empty();
- 
-    //     var searchTag = $("#gif-input").val().trim();
- 
-    //     tag.push(searchTag);
- 
-    //     renderButtons();
-    // });
- 
- 
- 
- 
- 
- $(document.body).on("click",".stateOption", function() {
- 
- 
- 
- var stateCode = $(this).attr("state-name");
- 
- var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + stateCode + "parkCode=acad&api_key=aN556zOtA9aa0cD6vuxveBONKziR8YgtFOaOiZls"
- 
- $.ajax({
+}
+
+}
+renderButtons();
+
+
+$(document.body).on("click",".stateOption", function() {
+
+$(".parkDiv").empty();
+
+var stateCode = $(this).attr("state-name");
+
+var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + stateCode + "parkCode=acad&api_key=aN556zOtA9aa0cD6vuxveBONKziR8YgtFOaOiZls"
+
+$.ajax({
     url: queryURL,
     method: "GET"
- })
+})
  
  .then(function(response) {
  
     var results = response.data
- 
+
     for(i = 0; i < results.length; i++){
     console.log("Success!");
     console.log(response);
@@ -108,7 +96,7 @@ var stateList = [
     console.log(queryURL);
     console.log(results[i].states);
     console.log(stateCode);
- 
+
     if(stateCode === results[i].states) {
     var parkDiv = $("<div>").addClass("parkDiv")
     var parkDescription = $("<p>").addClass("parkDescription").text(results[i].description);
@@ -129,3 +117,4 @@ var stateList = [
  }
  })
  });
+
