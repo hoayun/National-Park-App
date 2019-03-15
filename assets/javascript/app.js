@@ -74,7 +74,7 @@ renderButtons();
 
 $(document.body).on("click",".stateOption", function() {
 
-$(".parkDiv").empty();
+$(".row").empty();
 
 var stateCode = $(this).attr("state-name");
 
@@ -98,18 +98,33 @@ $.ajax({
     console.log(stateCode);
 
     if(stateCode === results[i].states) {
-    var parkDiv = $("<div>").addClass("parkDiv")
-    var parkDescription = $("<p>").addClass("parkDescription").text(results[i].description);
-    var parkDirections = $("<p>").addClass("parkAddress").text(results[i].directionsInfo);
-    var parkfullName =  $("<p>").addClass("parkname").text(results[i].fullName);
-    var parkState =  $("<p>").addClass("parkState").text(results[i].states);
-    var parkWeather =  $("<p>").addClass("parkWeather").text(results[i].weatherInfo);
-    parkDiv.append(parkDescription);
-    parkDiv.append(parkDirections);
-    parkDiv.append(parkfullName);
-    parkDiv.append(parkState);
-    parkDiv.append(parkWeather);
-    $("#park").prepend(parkDiv);
+
+        // creates the card body
+    var parkDiv = $("<div>").addClass("col-sm-4");
+    var cardDiv = $("<div>").addClass("card");
+    var cardImg = $("<div>").addClass("card-image waves-effect waves-block waves-light");
+    var parkImage = $("<img>").addClass("activator").attr("src", "https://cbsnews1.cbsistatic.com/hub/i/2018/10/25/89f3a96b-2dcf-4055-a9a9-bdec0ad6e5d0/yosemite.jpg");
+    var cardInfo = $("<div>").addClass("card-content");
+    var parkName = $("<span class = 'card-title activator grey-text text-darken-4'>" + results[i].fullName + "<i class='material-icons right'>more_vert</i></span>");
+    var parkLink = $("<p><a href=" + results[i].url + ">'park's page' </a></p>")
+    // var parkDirections = $("<p>").addClass("parkAddress").text(results[i].directionsInfo);
+    // var parkfullName =  $("<p>").addClass("parkname").text(results[i].fullName);
+    // var parkState =  $("<p>").addClass("parkState").text(results[i].states);
+    // var parkWeather =  $("<p>").addClass("parkWeather").text(results[i].weatherInfo);
+    // creates the reveal tab
+
+
+    parkDiv.append(cardDiv);
+    cardDiv.append(cardImg);
+    cardImg.append(parkImage);
+    cardInfo.append(parkName);
+    cardInfo.append(parkLink)
+    cardDiv.append(cardInfo);
+    
+    // parkDiv.append(parkfullName);
+    // parkDiv.append(parkState);
+    // parkDiv.append(parkWeather);
+    $(".row").append(parkDiv);
     }
     else {
      console.log(results[i].states);
@@ -143,10 +158,10 @@ $.ajax({
     //   })
   
 
-})
-});
+// })
+// });
 
-
- }
+ 
+//  }
  })
  });
