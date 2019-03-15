@@ -68,26 +68,10 @@ for(var i = 0; i < stateList.length; i++){
 
 }
 renderButtons();
-    // $("#searchButton").on("click", function(event) {
-
-    //     event.preventDefault();
-
-    //     $("#button-display").empty();
-
-    //     var searchTag = $("#gif-input").val().trim();
-
-    //     tag.push(searchTag);
-
-    //     renderButtons();
-    // });
-    
-
-
-
 
 $(document.body).on("click",".stateOption", function() {
 
-
+$(".parkDiv").empty();
 
 var stateCode = $(this).attr("state-name");
 
@@ -102,7 +86,7 @@ $.ajax({
 
     var results = response.data
 
-    for(i = 0; i < results.length; i++){
+    for(i = 0; i < results.length; i++) {
     console.log("Success!");
     console.log(response);
     console.log(results);
@@ -125,8 +109,46 @@ $.ajax({
     $("#park").prepend(parkDiv);
     }
     else {
-     console.log(results[i].states)
+     console.log(results[i].states);
     }
-}
+
+
+
+// 4 and 11
+
+
+
+
+
+    var location = results[i].latLong;
+    var reLocation = /[^\d.-]/
+    var arrLocation = location.split(reLocation)
+
+    var lat = arrLocation[4]
+    var lon = arrLocation[11]
+
+    console.log(arrLocation);
+    console.log(lat);
+    console.log(lon);
+
+    }
+    // var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat +"&lon=" +lon +"&appid=e9a10084a1f3dbf9d885547ab6255b32"
+  
+  
+  
+    // $.ajax({
+    //   url: queryURL,
+    //   method: "GET"
+    // })
+
+    //  .then(function(response){
+    //     console.log(queryURL);
+    //     console.log(response);
+    //   })
+  
+
 })
 });
+
+
+
