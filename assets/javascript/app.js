@@ -74,7 +74,7 @@ renderButtons();
 
 $(document.body).on("click",".stateOption", function() {
 
-$(".row").empty();
+$(".park").empty();
 
 var stateCode = $(this).attr("state-name");
 
@@ -106,8 +106,13 @@ $.ajax({
     var parkImage = $("<img>").addClass("activator").attr("src", "https://cbsnews1.cbsistatic.com/hub/i/2018/10/25/89f3a96b-2dcf-4055-a9a9-bdec0ad6e5d0/yosemite.jpg");
     var cardInfo = $("<div>").addClass("card-content");
     var parkName = $("<span class = 'card-title activator grey-text text-darken-4'>" + results[i].fullName + "<i class='material-icons right'>more_vert</i></span>");
-    var parkLink = $("<p><a href=" + results[i].url + ">'park's page' </a></p>")
-    // var parkDirections = $("<p>").addClass("parkAddress").text(results[i].directionsInfo);
+    var parkLink = $("<p><a href=" + results[i].url + "> 'LINK' </a></p>");
+    
+    // creates reveal modal
+    var cardReveal = $("<div>").addClass("card-reveal")
+    var rparkName = $("<span class = 'card-title grey-text text-darken-4'>" + results[i].fullName + "<i class='material-icons right'>close</i></span>")
+    var parkDescription = $("<p>").addClass("parkDescription").text("Description: " + results[i].description)
+    var parkDirections = $("<p>").addClass("parkAddress").text("Directions: " + results[i].directionsInfo);
     // var parkfullName =  $("<p>").addClass("parkname").text(results[i].fullName);
     // var parkState =  $("<p>").addClass("parkState").text(results[i].states);
     // var parkWeather =  $("<p>").addClass("parkWeather").text(results[i].weatherInfo);
@@ -120,11 +125,15 @@ $.ajax({
     cardInfo.append(parkName);
     cardInfo.append(parkLink)
     cardDiv.append(cardInfo);
+    cardReveal.append(rparkName);
+    cardReveal.append(parkDescription);
+    cardReveal.append(parkDirections)
+    cardDiv.append(cardReveal);
     
     // parkDiv.append(parkfullName);
     // parkDiv.append(parkState);
     // parkDiv.append(parkWeather);
-    $(".row").append(parkDiv);
+    $(".park").append(parkDiv);
     }
     else {
      console.log(results[i].states);
