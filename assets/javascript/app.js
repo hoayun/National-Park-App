@@ -68,26 +68,11 @@ for(var i = 0; i < stateList.length; i++){
 
 }
 renderButtons();
-    // $("#searchButton").on("click", function(event) {
-
-    //     event.preventDefault();
-
-    //     $("#button-display").empty();
-
-    //     var searchTag = $("#gif-input").val().trim();
-
-    //     tag.push(searchTag);
-
-    //     renderButtons();
-    // });
-    
-
-
 
 
 $(document.body).on("click",".stateOption", function() {
 
-
+$(".parkDiv").empty();
 
 var stateCode = $(this).attr("state-name");
 
