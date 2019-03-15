@@ -62,10 +62,11 @@ var stateList = [
  //    stateSel.addClass("button")
 
    stateSel.attr("state-name", stateList[i]);
-   stateSel.addClass("stateOption")
+   stateSel.addClass("stateOption dropdown-item")
    stateSel.attr("value", stateList[i]);
    stateSel.text(stateList[i]);
    $(".form-control").append(stateSel);
+   $(".dropdown-menu").append(stateSel);
 }
 
 }
