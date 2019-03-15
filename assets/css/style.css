@@ -1,0 +1,14 @@
+nav {
+    background-color: #ddd;
+
+}
+
+body {
+    background-image: url("assets/images/wallpaper.png");
+    background-size: 100%, 100%;
+    /*font-family: Nanum Gothic;*/  
+}
+
+.btn-flat {
+    color: white;
+}

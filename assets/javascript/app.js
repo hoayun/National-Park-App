@@ -51,19 +51,22 @@ var stateList = [
     "WI",
     "WY",
     "DC"
+
 ];
-
-function renderButtons () {
-
-for(var i = 0; i < stateList.length; i++){
-
+ 
+ function renderButtons () {
+ 
+ for(var i = 0; i < stateList.length; i++){
+ 
    var stateSel = $("<option>");
-//    stateSel.addClass("button")
+ //    stateSel.addClass("button")
+
    stateSel.attr("state-name", stateList[i]);
-   stateSel.addClass("stateOption")
+   stateSel.addClass("stateOption dropdown-item")
    stateSel.attr("value", stateList[i]);
    stateSel.text(stateList[i]);
    $(".form-control").append(stateSel);
+   $(".dropdown-menu").append(stateSel);
 }
 
 }
@@ -81,9 +84,9 @@ $.ajax({
     url: queryURL,
     method: "GET"
 })
-
-.then(function(response) {
-
+ 
+ .then(function(response) {
+ 
     var results = response.data
 
     for(i = 0; i < results.length; i++) {
@@ -111,13 +114,6 @@ $.ajax({
     else {
      console.log(results[i].states);
     }
-
-
-
-// 4 and 11
-
-
-
 
 
     var location = results[i].latLong;
@@ -151,4 +147,6 @@ $.ajax({
 });
 
 
-
+ }
+ })
+ });

@@ -1,0 +1,40 @@
+nav {
+    background-color:  #f7edca;
+    
+
+}
+
+body {
+    background-image: url("assets/images/c6ba8fd886fee34e07122fa17a2de980.jpg");
+    background-size: 100%, 100%;
+    background-attachment: fixed;
+    margin: 50px;
+    border-radius: 25px;
+}
+
+.btn-flat {
+    color: white;
+}
+
+.card {
+    background-color: #f7edcac1;
+    
+}
+
+.modal-content {
+    background-clip: unset;
+    background-color: #6c757de0;
+}
+
+a {
+    color: #1f2531;
+}
+
+
+.container {
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 25px;
+    
+
+}
