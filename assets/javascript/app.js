@@ -115,7 +115,7 @@ $.ajax({
     var parkDirections = $("<p>").addClass("parkAddress").text("Directions: " + results[i].directionsInfo);
     // var parkfullName =  $("<p>").addClass("parkname").text(results[i].fullName);
     // var parkState =  $("<p>").addClass("parkState").text(results[i].states);
-    // var parkWeather =  $("<p>").addClass("parkWeather").text(results[i].weatherInfo);
+    var parkWeather =  $("<div>").addClass("parkWeather").text("Weather forecast: *****")
     // creates the reveal tab
 
 
@@ -128,6 +128,7 @@ $.ajax({
     cardReveal.append(rparkName);
     cardReveal.append(parkDescription);
     cardReveal.append(parkDirections)
+    cardReveal.append(parkWeather)
     cardDiv.append(cardReveal);
     
     // parkDiv.append(parkfullName);
@@ -152,6 +153,8 @@ $.ajax({
     console.log(lon);
 
     }
+
+
     // var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat +"&lon=" +lon +"&appid=e9a10084a1f3dbf9d885547ab6255b32"
   
   
