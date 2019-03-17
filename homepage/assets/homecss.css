@@ -1,0 +1,14 @@
+body{
+    background-image: url(images/bround.jpg);
+    background-size: auto
+    
+}
+.spacer10 { 
+    height: 10px;
+     width: 100%;
+    font-size: 0;
+     margin: 0;
+     padding: 0;
+     border: 0;
+     display: block;
+     }
