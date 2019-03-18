@@ -124,10 +124,10 @@ $.ajax({
     cardDiv.append(cardImg);
 // CARDIMAGE
     cardInfo.append(parkName);
-    cardInfo.append(parkLink)
+    cardReveal.append(parkLink)
     cardDiv.append(cardInfo);
     cardReveal.append(rparkName);
-    cardReveal.append(parkDescription);
+    cardInfo.append(parkDescription);
     cardReveal.append(parkDirections)
     cardReveal.append(parkWeather)
     cardDiv.append(cardReveal);
