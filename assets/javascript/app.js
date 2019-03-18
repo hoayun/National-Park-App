@@ -151,7 +151,7 @@ $.ajax({
          
      var picture = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + responseImage.candidates[0].photos[0].photo_reference +"&key=AIzaSyD2LUBEEH2AkOsk_jhIPt1UYqUTUq5QBRA";
      var parkImage = $("<img>").addClass("activator").attr("src", picture);
-     parkImage.addClass("rounded-circle border border-warning");
+     parkImage.addClass("border border-warning").text("park name");
      $("#pic").append(parkImage);
  
  //    };
@@ -185,33 +185,6 @@ $.ajax({
 
    
 
-   $.ajax({
-     url: queryURL3,
-     method: "GET"
-   }).then(function(responseImage) {
-
-     console.log("This is the response: ", responseImage);
-    // POssible responses: response.candidates[0].formatted_address, response.candidates[0].photos, response.candidates[0].geometry
-
-    var capture = responseImage.candidates[0];
-
-    console.log(capture)
-    var picture = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + capture.photos[0].photo_reference +"&key=AIzaSyD2LUBEEH2AkOsk_jhIPt1UYqUTUq5QBRA";
-    var parkImage = $("<img>").addClass("activator").attr("src", picture);
-
-    parkDiv.append(cardDiv);
-    cardDiv.append(cardImg);
-    cardImg.append(parkImage);
-    cardInfo.append(parkName);
-    cardInfo.append(parkLink)
-    cardDiv.append(cardInfo);
-    cardReveal.append(rparkName);
-    cardReveal.append(parkDescription);
-    cardReveal.append(parkDirections)
-    cardReveal.append(parkWeather)
-    cardDiv.append(cardReveal);
-    $(".park").append(parkDiv);
-});
     }
  })
 
