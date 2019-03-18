@@ -75,10 +75,12 @@ renderButtons();
 $(document.body).on("click",".stateOption", function() {
 
 $(".park").empty();
+$("#pic").empty();
 
 var stateCode = $(this).attr("state-name");
+$("#selectedstate").text("|     " + stateCode + "     |");
 
-var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + stateCode + "parkCode=acad&api_key=aN556zOtA9aa0cD6vuxveBONKziR8YgtFOaOiZls"
+var queryURL = "https://developer.nps.gov/api/v1/parks?stateCode=" + stateCode + "&limit=1000&api_key=aN556zOtA9aa0cD6vuxveBONKziR8YgtFOaOiZls"
 
 $.ajax({
     url: queryURL,
@@ -99,13 +101,16 @@ $.ajax({
 
     if(stateCode === results[i].states) {
 
-        // creates the card body
-    var parkDiv = $("<div>").addClass("col-sm-4");
+        // creates the card body 
+    var parkDiv = $("<div>")
     var cardDiv = $("<div>").addClass("card");
     var cardImg = $("<div>").addClass("card-image waves-effect waves-block waves-light");
     var cardInfo = $("<div>").addClass("card-content");
     var parkName = $("<span class = 'card-title activator grey-text text-darken-4'>" + results[i].fullName + "<i class='material-icons right'>more_vert</i></span>");
-    var parkLink = $("<p><a href=" + results[i].url + "> 'LINK' </a></p>");
+
+    var parkLink = $("<p><a href=" + results[i].url + "> Park Webpage | " + results[i].url + "</a></p>");
+    
+
     // creates reveal modal
     var cardReveal = $("<div>").addClass("card-reveal")
     var rparkName = $("<span class = 'card-title grey-text text-darken-4'>" + results[i].fullName + "<i class='material-icons right'>close</i></span>")
@@ -113,15 +118,52 @@ $.ajax({
     var parkDirections = $("<p>").addClass("parkAddress").text("Directions: " + results[i].directionsInfo);
     // var parkfullName =  $("<p>").addClass("parkname").text(results[i].fullName);
     // var parkState =  $("<p>").addClass("parkState").text(results[i].states);
-    var parkWeather =  $("<div>").addClass("parkWeather").text("Weather forecast: *****")
+    var parkWeather =  $("<div>").addClass("parkWeather").text( results[i].weatherInfo)
     // creates the reveal tab
 
 
+
+    parkDiv.append(cardDiv);
+    cardDiv.append(cardImg);
+// CARDIMAGE
+    cardInfo.append(parkName);
+    cardInfo.append(parkLink)
+    cardDiv.append(cardInfo);
+    cardReveal.append(rparkName);
+    cardReveal.append(parkDescription);
+    cardReveal.append(parkDirections)
+    cardReveal.append(parkWeather)
+    cardDiv.append(cardReveal);
+    
+    // parkDiv.append(parkfullName);
+    // parkDiv.append(parkState);
+    // parkDiv.append(parkWeather);
+    $(".park").append(parkDiv);var queryURL3 = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=" + parkname + "&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=AIzaSyD2LUBEEH2AkOsk_jhIPt1UYqUTUq5QBRA";
    
-    // }
-    // else {
-    //  console.log(results[i].states);
-    // }
+    $.ajax({
+      url: queryURL3,
+      method: "GET"
+    }).then(function(responseImage) {
+ 
+      console.log("This is the response: ", responseImage);
+     // POssible responses: response.candidates[0].formatted_address, response.candidates[0].photos, response.candidates[0].geometry
+ 
+         
+     var picture = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + responseImage.candidates[0].photos[0].photo_reference +"&key=AIzaSyD2LUBEEH2AkOsk_jhIPt1UYqUTUq5QBRA";
+     var parkImage = $("<img>").addClass("activator").attr("src", picture);
+     parkImage.addClass("rounded-circle border border-warning");
+     $("#pic").append(parkImage);
+ 
+ //    };
+ 
+     // close forloop
+     });
+
+    }
+    else {
+     console.log(results[i].states);
+    }
+
 
 
     var location = results[i].latLong;
@@ -141,8 +183,8 @@ $.ajax({
    parkname = parkname.replace(/\s+/g, '');
    console.log(parkname);
 
-   var queryURL3 = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=" + parkname + "&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=AIzaSyD2LUBEEH2AkOsk_jhIPt1UYqUTUq5QBRA";
    
+
    $.ajax({
      url: queryURL3,
      method: "GET"
@@ -190,6 +232,7 @@ $.ajax({
     }
  }
 })
+
 });
     // var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat +"&lon=" +lon +"&appid=e9a10084a1f3dbf9d885547ab6255b32"
   
@@ -208,8 +251,3 @@ $.ajax({
 
 // })
 // });
-
- 
-//  }
-//  })
-//  });
