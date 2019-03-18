@@ -14,13 +14,14 @@
 
 <body>
   <div class="container">
+    <!-- Headings -->
     <div class="row">
       <div class="col-md-10 mx-auto text-center">
 
         <h1 class="display-1">National Parks Finder</h1>
       </div>
     </div>
-
+<!-- Start Carousel -->
     <div class="row">
       <div class="col-md-8 mx-auto">
         <div class="bd-example">
@@ -100,16 +101,24 @@
           </div>
         </div>
       </div>
+      <!-- Carousel End -->
 
 
     </div>
+  </div>
+
     <!-- <div class="spacer10"></div> -->
 <div class="row">
-  <div class="col-md-12">
-      <button type="" class="btn btn-secondary btn-lg btn-block my-5">CLick to enter the Finder</button>
-</div>
+  
+      <button id="myButton" class="float-center submit-button mx-auto my-5" >Click here to search for National Parks</button>
 
-  </div>
+      <script type="text/javascript">
+          document.getElementById("myButton").onclick = function () {
+             // location.href = URL:(../index.html)";
+             console.log("Click")
+          };
+  
+</script>
 
 
 
