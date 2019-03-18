@@ -11,6 +11,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Most Recent Member!</h5>
+          <h6 class="card-subtitle mb-2 text-muted"></h6>
+          <p class="card-text" id = "usernameRecent"></p>
+          <p class="card-text" id = "emailRecent"></p>
+        </div>
+      </div>
+
     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
     <input class="form-control form-control-lg" id = "username" type="text" placeholder="username">
     <input class="form-control form-control-lg" id = "password" type="text" placeholder="password">
@@ -61,7 +71,7 @@
     state  = $("#state").val().trim();
     phone  = $("#phone").val().trim();
 
-    database.ref().push({
+    database.ref().set({
         email: email,
         username: username,
         password: password,
@@ -79,6 +89,13 @@
     console.log(snapshot.val().address)
     console.log(snapshot.val().state)
     console.log(snapshot.val().phone)
+
+    $(".card-subtitle mb-2 text-muted").text(snapshot.val().name)
+    $("#usernameRecent").text(snapshot.val().username)
+    $("#emailRecent").text(snapshot.val().email)
+    
+  }, function(errorObject) {
+      console.log("Errors handled: " + errorObject.code);
     })
 })
   
