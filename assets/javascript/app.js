@@ -127,10 +127,10 @@ $.ajax({
     cardDiv.append(cardImg);
 // CARDIMAGE
     cardInfo.append(parkName);
-    cardInfo.append(parkLink)
+    cardReveal.append(parkLink)
     cardDiv.append(cardInfo);
     cardReveal.append(rparkName);
-    cardReveal.append(parkDescription);
+    cardInfo.append(parkDescription);
     cardReveal.append(parkDirections)
     cardReveal.append(parkWeather)
     cardDiv.append(cardReveal);
@@ -210,44 +210,12 @@ $.ajax({
     cardReveal.append(parkDirections)
     cardReveal.append(parkWeather)
     cardDiv.append(cardReveal);
-    
-    // parkDiv.append(parkfullName);
-    // parkDiv.append(parkState);
-    // parkDiv.append(parkWeather);
     $(".park").append(parkDiv);
-
-
-
-
-
-
-
-
-
-
-//    };
-
-    // close forloop
-    });
+});
     }
- }
-})
+ })
+
 
 });
-    // var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat +"&lon=" +lon +"&appid=e9a10084a1f3dbf9d885547ab6255b32"
-  
-  
-  
-    // $.ajax({
-    //   url: queryURL,
-    //   method: "GET"
-    // })
 
-    //  .then(function(response){
-    //     console.log(queryURL);
-    //     console.log(response);
-    //   })
-  
-
-// })
-// });
+   
