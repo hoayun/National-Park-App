@@ -111,6 +111,7 @@ $(document.body).on("click",".stateOption", function() {
           var parkDescription = $("<p>").addClass("parkDescription").text("Description: " + results[i].description)
           var parkDirections = $("<p>").addClass("parkAddress").text("Directions: " + results[i].directionsInfo);
           var parkWeather =  $("<div>").addClass("parkWeather").text( results[i].weatherInfo)
+          var weatherDiv = $("<div>").attr("id", "weatherDiv");
 
             parkDiv.append(cardDiv);
             cardInfo.append(parkName);
@@ -141,23 +142,34 @@ $(document.body).on("click",".stateOption", function() {
         });
 
         // AJax request to weatherbit API 
+                // retriveing the park grid coordinates using the google places API
           var location = results[i].latLong;
           var reLocation = /[^\d.-]/
           var arrLocation = location.split(reLocation)
           var lat = arrLocation[4]
           var lon = arrLocation[11]
-                console.log(lat);
-                console.log(lon);
 
-    var queryURL = " https://api.weatherbit.io/v2.0/current&lang=en&units=I&lat=" + lat + "&lon=" + lon + "&key=3cb3d66eef7148fd87971e18a247932e"
+    var queryURL4 = "https://api.weatherbit.io/v2.0/current?lang=en&units=I&lat=" + lat + "&lon=" + lon + "&key=3cb3d66eef7148fd87971e18a247932e"
 
   $.ajax({
-      url: queryURL,
+      url: queryURL4,
       method: "GET"
   }).then(function(responseWeather) {
-        
-          var resultsWeather = responseWeather
-                console.log("weather results" + resultsWeather)
+      
+                console.log("weather results" + responseWeather.data);
+                console.log(responseWeather.data[0].precip)
+                console.log(responseWeather.data[0].temp)
+                console.log(responseWeather.data[0].sunrise)
+                console.log(responseWeather.data[0].sunset)
+                var weatherTemp = $("<p>").text("Current Temp: " + responseWeather.data[0].temp);
+                var weatherPrecip = $("<p>").text("Precipitation: " + responseWeather.data[0].precip);
+                var weatherRise = $("<p>").text("Sunrise: " + responseWeather.data[0].sunrise);
+                var weatherSet = $("<p>").text("Sunset: " + responseWeather.data[0].sunset);
+                weatherDiv.append(weatherTemp);
+                weatherDiv.append(weatherPrecip);
+                weatherDiv.append(weatherRise);
+                weatherDiv.append(weatherSet);
+                $("#pic").append(weatherDiv)
       });
     }
   }
