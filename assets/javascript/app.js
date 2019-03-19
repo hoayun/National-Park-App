@@ -165,11 +165,24 @@ $(document.body).on("click",".stateOption", function() {
                 var weatherPrecip = $("<p>").text("Precipitation: " + responseWeather.data[0].precip);
                 var weatherRise = $("<p>").text("Sunrise: " + responseWeather.data[0].sunrise);
                 var weatherSet = $("<p>").text("Sunset: " + responseWeather.data[0].sunset);
-                weatherDiv.append(weatherTemp);
-                weatherDiv.append(weatherPrecip);
-                weatherDiv.append(weatherRise);
-                weatherDiv.append(weatherSet);
-                $("#pic").append(weatherDiv)
+
+                var weatherdiv = $("<div>")
+                var wcardDiv = $("<div>").addClass("card");
+                var wInfo = $("<div>").addClass("card-content");
+                
+                weatherdiv.append(wcardDiv);
+                wInfo.append(weatherTemp);
+                wInfo.append(weatherRise);
+                wInfo.append(weatherSet);
+                wInfo.append(weatherPrecip);
+                wcardDiv.append(wInfo);
+               
+                
+               
+               
+                $(".weather").append(weatherdiv);
+               
+               
       });
     }
   }
