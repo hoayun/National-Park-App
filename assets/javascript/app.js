@@ -155,21 +155,25 @@ $(document.body).on("click",".stateOption", function() {
       url: queryURL4,
       method: "GET"
   }).then(function(responseWeather) {
-      
-                console.log("weather results" + responseWeather.data);
-                console.log(responseWeather.data[0].precip)
-                console.log(responseWeather.data[0].temp)
-                console.log(responseWeather.data[0].sunrise)
-                console.log(responseWeather.data[0].sunset)
+                // Weather data
                 var weatherTemp = $("<p>").text("Current Temp: " + responseWeather.data[0].temp);
                 var weatherPrecip = $("<p>").text("Precipitation: " + responseWeather.data[0].precip);
                 var weatherRise = $("<p>").text("Sunrise: " + responseWeather.data[0].sunrise);
                 var weatherSet = $("<p>").text("Sunset: " + responseWeather.data[0].sunset);
-                weatherDiv.append(weatherTemp);
-                weatherDiv.append(weatherPrecip);
-                weatherDiv.append(weatherRise);
-                weatherDiv.append(weatherSet);
-                $("#pic").append(weatherDiv)
+                // Making a card for weather
+                var weatherdiv = $("<div>")
+                var wcardDiv = $("<div>").addClass("card");
+                var wInfo = $("<div>").addClass("card-content");
+                // Putting weather data on weather card
+                weatherdiv.append(wcardDiv);
+                wInfo.append(weatherTemp);
+                wInfo.append(weatherRise);
+                wInfo.append(weatherSet);
+                wInfo.append(weatherPrecip);
+                wcardDiv.append(wInfo);
+                $(".weather").append(weatherdiv);
+               
+               
       });
     }
   }
