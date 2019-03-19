@@ -70,6 +70,7 @@ $(document.body).on("click",".stateOption", function() {
 
     $(".park").empty();
     $("#pic").empty();
+    $(".weather").empty();
 
   var stateCode = $(this).attr("state-name");
 
@@ -111,7 +112,7 @@ $(document.body).on("click",".stateOption", function() {
           var parkDescription = $("<p>").addClass("parkDescription").text("Description: " + results[i].description)
           var parkDirections = $("<p>").addClass("parkAddress").text("Directions: " + results[i].directionsInfo);
           var parkWeather =  $("<div>").addClass("parkWeather").text( results[i].weatherInfo)
-          var weatherDiv = $("<div>").attr("id", "weatherDiv");
+          
 
             parkDiv.append(cardDiv);
             cardInfo.append(parkName);
@@ -136,40 +137,44 @@ $(document.body).on("click",".stateOption", function() {
   }).then(function(responseImage) {
     
           var picture = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + responseImage.candidates[0].photos[0].photo_reference +"&key=AIzaSyD2LUBEEH2AkOsk_jhIPt1UYqUTUq5QBRA";
-          var parkImage = $("<img>").addClass("rounded-circle border border-warning activator").attr("src", picture);
+          var parkImage = $("<img>").addClass("rounded border border-warning activator").attr("src", picture);
 
             $("#pic").append(parkImage);
         });
 
         // AJax request to weatherbit API 
-                // retriveing the park grid coordinates using the google places API
+                // retrieving the park grid coordinates using the google places API
           var location = results[i].latLong;
           var reLocation = /[^\d.-]/
           var arrLocation = location.split(reLocation)
           var lat = arrLocation[4]
           var lon = arrLocation[11]
 
-    var queryURL4 = "https://api.weatherbit.io/v2.0/current?lang=en&units=I&lat=" + lat + "&lon=" + lon + "&key=3cb3d66eef7148fd87971e18a247932e"
+    var queryURL4 = "https://api.weatherbit.io/v2.0/current?lang=en&units=I&lat=" + lat + "&lon=" + lon + "&key=1579385d2353451391cc7c0e0017d9b4"
 
   $.ajax({
       url: queryURL4,
       method: "GET"
   }).then(function(responseWeather) {
                 // Weather data
+                console.log(responseWeather);
+                
+                var weathericon = $("<img>").attr("src", 'https://www.weatherbit.io/static/img/icons/' + responseWeather.data[0].weather.icon + '.png');
+                var weatherDes = $("<p>").text(responseWeather.data[0].weather.description);
                 var weatherTemp = $("<p>").text("Current Temp: " + responseWeather.data[0].temp);
-                var weatherPrecip = $("<p>").text("Precipitation: " + responseWeather.data[0].precip);
                 var weatherRise = $("<p>").text("Sunrise: " + responseWeather.data[0].sunrise);
                 var weatherSet = $("<p>").text("Sunset: " + responseWeather.data[0].sunset);
                 // Making a card for weather
                 var weatherdiv = $("<div>")
-                var wcardDiv = $("<div>").addClass("card");
+                var wcardDiv = $("<div>").addClass("card wcard");
                 var wInfo = $("<div>").addClass("card-content");
                 // Putting weather data on weather card
                 weatherdiv.append(wcardDiv);
+                wInfo.append(weathericon)
+                wInfo.append(weatherDes);
                 wInfo.append(weatherTemp);
                 wInfo.append(weatherRise);
                 wInfo.append(weatherSet);
-                wInfo.append(weatherPrecip);
                 wcardDiv.append(wInfo);
                 $(".weather").append(weatherdiv);
                
