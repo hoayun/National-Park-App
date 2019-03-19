@@ -1,0 +1,51 @@
+nav {
+    background-color:  #f7edca;
+    
+
+}
+
+body {
+    background-image: url("../images/Wallpaper.jpg");
+    background-size: 100%, 100%;
+    background-attachment: fixed;
+    margin: 50px;
+    border-radius: 25px;
+}
+
+.btn-flat {
+    color: rgb(196, 166, 35);
+}
+
+.card {
+    background-color: #f7edcac1;
+    height: 400px;
+    
+}
+
+.modal-content {
+    background-clip: unset;
+    background-color: #6c757de0;
+}
+
+a {
+    color: #1f2531;
+}
+
+
+.container {
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 25px;
+    
+
+}
+.activator{
+    margin:20px;
+    border: solid, 5px, rgb(196, 166, 35);
+}
+#selectedstate{
+    color: rgb(196, 166, 35);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 48px;
+
+}
