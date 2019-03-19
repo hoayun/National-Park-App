@@ -17,9 +17,18 @@ body {
 }
 
 .card {
-    background-color: #f7edcac1;
+    background-color: #f7edcaef;
     height: 400px;
+    text-align:center;
     
+}
+
+.weather {
+    font-size: 36px;
+   
+}
+.wcard{
+    background-image: url("../images/sky.jpg");
 }
 
 .modal-content {
