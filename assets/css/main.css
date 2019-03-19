@@ -5,7 +5,7 @@ nav {
 }
 
 body {
-    background-image: url("assets/images/c6ba8fd886fee34e07122fa17a2de980.jpg");
+    background-image: url("../images/Wallpaper.jpg");
     background-size: 100%, 100%;
     background-attachment: fixed;
     margin: 50px;
@@ -13,11 +13,12 @@ body {
 }
 
 .btn-flat {
-    color: white;
+    color: rgb(196, 166, 35);
 }
 
 .card {
     background-color: #f7edcac1;
+    height: 400px;
     
 }
 
@@ -36,5 +37,15 @@ a {
     background: rgba(0,0,0,0.5);
     border-radius: 25px;
     
+
+}
+.activator{
+    margin:20px;
+    border: solid, 5px, rgb(196, 166, 35);
+}
+#selectedstate{
+    color: rgb(196, 166, 35);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 48px;
 
 }
