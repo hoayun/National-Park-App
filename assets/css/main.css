@@ -22,7 +22,14 @@ body {
     text-align:center;
     
 }
+.title{
+    text-align: center;
+    color: rgb(116, 83, 12);
+    font-family:'Times New Roman', Times, serif;
+    margin-top:20px;
+    background-color: #f7edcaef;
 
+}
 .weather {
     font-size: 36px;
    
