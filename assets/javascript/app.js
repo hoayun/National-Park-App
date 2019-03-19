@@ -80,11 +80,13 @@ $(document.body).on("click",".stateOption", function() {
   $.ajax({
       url: queryURL,
       method: "GET"
+
   })
   
   .then(function(response) {
     
       var results = response.data
+
 
         for(i = 0; i < results.length; i++) {
           console.log("Success!");
@@ -101,6 +103,7 @@ $(document.body).on("click",".stateOption", function() {
           var parkName = $("<span class = 'card-title activator grey-text text-darken-4'>" + results[i].fullName + "<i class='material-icons right'>more_vert</i></span>");
           var parkLink = $("<p><a href=" + results[i].url + "> Park Webpage | " + results[i].url + "</a></p>");
           
+
 
     // creates reveal modal
           var cardReveal = $("<div>").addClass("card-reveal")
