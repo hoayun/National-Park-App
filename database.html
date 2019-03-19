@@ -7,43 +7,50 @@
     <title>National Park Finder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Assistant|Libre+Franklin|Nanum+Gothic" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css">
    
 </head>
 <body>
-    <h1 class="text-center" id="selectedstate"></h1>
+<div class="container">
  <nav>
-
+    
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo center"><i class="large material-icons">fingerprint</i></a>
+            <a href="#!" class="brand-logo center"><i class="large material-icons" style="font-size: 80px; margin: 20px;">fingerprint
+               </i></a>
             <ul class="right hide-on-med-and-down">
             </ul>
         <div class="dropdown">
                     <button class="btn btn-flat dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      States | Explore
+                      States | E x p l o r e 
+                      <h1 class="text-center" id="selectedstate" style="font-size: 30px; color:  rgb(87, 81, 67);"></h1>
                     </button>
+                   
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      
+                        
                     </div>
                   </div>
         </div>
         </nav>
-        <div class="row">
-        <h1 id="parknames" class="col-md-4 title">State Parks</h1>
-        <h1 id="parkweather" class="col-md-4 title">Park Weather</h1>
-        <h1 id="parkphotos" class="col-md-4 title">Photo Gallery</h1>
+        <div class="mainrow">
+          
+          <div class="row">
+            <h1 id="parknames" class="col-md-4 title">State Parks</h1>
+            <h1 id="parkweather" class="col-md-4 title">Park Weather</h1>
+            <h1 id="parkphotos" class="col-md-4 title">Photo Gallery</h1>
+          </div>
 
+      </div>
 
-        </div>
-
-        <div container>
+       
         <div class= row>
         <div class="park col-md-4"></div>
         <div class="weather col-md-4"></div>
-        <div id = "pic" class="col-md-4"></div>
+        <div id = "pic" class="col-md-3"></div>
         </div>
+</div>
       
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

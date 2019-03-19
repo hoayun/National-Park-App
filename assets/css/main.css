@@ -1,6 +1,7 @@
 nav {
     background-color:  #f7edca;
-    
+    height: 109px;
+    border-radius: 25px;
 
 }
 
@@ -8,30 +9,34 @@ body {
     background-image: url("../images/Wallpaper.jpg");
     background-size: 100%, 100%;
     background-attachment: fixed;
-    margin: 50px;
+    /* margin: 50px; */
     border-radius: 25px;
 }
 
 .btn-flat {
-    color: rgb(196, 166, 35);
+    color:  rgb(87, 81, 67);
+    margin: 20px;
+    margin-top: 10px;
+    
 }
 
 .card {
-    background-color: #f7edcaef;
+    background-color: #f7edcadb;
     height: 400px;
     text-align:center;
+    border-radius: 25px;
     
 }
 .title{
     text-align: center;
-    color: rgb(116, 83, 12);
-    font-family:'Times New Roman', Times, serif;
+    color: rgb(87, 81, 67);
+    font-family: Libre Franklin;
     margin-top:20px;
-    background-color: #f7edcaef;
-
+    /* background-color: #f7edcadb;
+    border-radius: 25px; */
 }
 .weather {
-    font-size: 36px;
+    font-size: 23px;
    
 }
 .wcard{
@@ -66,6 +71,17 @@ a {
 
 }
 #pic{
-    background-color: #f7edcac1;
+    padding: inherit;
     margin-top:10px;
+
+}
+
+.imgCard {
+    max-width: 280px;
+}
+
+.mainrow {
+    background-color:  #f7edcadb;
+    border-radius: 25px;
+    margin-top: 20px;
 }

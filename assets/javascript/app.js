@@ -138,7 +138,7 @@ $(document.body).on("click",".stateOption", function() {
     
           var picture = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + responseImage.candidates[0].photos[0].photo_reference +"&key=AIzaSyD2LUBEEH2AkOsk_jhIPt1UYqUTUq5QBRA";
           var parkImage = $("<img>").addClass("rounded border border-warning activator").attr("src", picture);
-
+            parkImage.addClass("imgCard");
             $("#pic").append(parkImage);
         });
 
@@ -150,7 +150,7 @@ $(document.body).on("click",".stateOption", function() {
           var lat = arrLocation[4]
           var lon = arrLocation[11]
 
-    var queryURL4 = "https://api.weatherbit.io/v2.0/current?lang=en&units=I&lat=" + lat + "&lon=" + lon + "&key=1579385d2353451391cc7c0e0017d9b4"
+    var queryURL4 = "https://api.weatherbit.io/v2.0/current?lang=en&units=I&lat=" + lat + "&lon=" + lon + "&key=a0afd817d0cf4a7190adfb977110a2fe"
 
   $.ajax({
       url: queryURL4,
