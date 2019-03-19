@@ -12,3 +12,8 @@ body{
      border: 0;
      display: block;
      }
+     #dbase {
+        width:100px;
+        margin-left:auto;
+        margin-right:auto;
+    }
