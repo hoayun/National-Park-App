@@ -1,183 +1,162 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="firebase.css">
-  </head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="firebase.css">
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+</head>
+
 <body>
-    <div class="container">
-        <!-- Nav Bar for homepage and contact us page -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">National Park Finder</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="#home">Home </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#park">Park Finder</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="#contact">Contact Us!<span class="sr-only">(current)</span></a>
-                </li>
-              </ul>
-              <span class="navbar-text">
-                Your 50 state National Park Finder
-              </span>
-            </div>
-          </nav>
-        
-        
-        <!-- end nav -->
-        <!-- start form -->
-
-        <!--Contact Form -->
-        <form>
-            <div class="form-row">
-              <div class="row">
-                <div class="col-md-6">
-                  <h6>First Name</h6>
-                  <input type="text" class="form-control" placeholder="First name">
-                </div>
-                <div class="col-md-6">
-                  <h6>Last Name</h6>
-                  <input type="text" class="form-control" placeholder="Last name">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Enter email">
-                </div>
-              </div>
-            
-                <small id="emailHelp" class="form-text text-muted">
-                
-                </small>
-              </div>
-            
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">Message</span>
-              </div>
-              <input type="text" class="form-control" aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-default">
-            </div>
+  <div class="container">
+    <!-- Nav Bar for homepage and contact us page -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">National Park Finder</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#park">Park Finder</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#contact">Contact Us!<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          Your 50 state National Park Finder
+        </span>
+      </div>
+    </nav>
 
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+    <!-- end nav -->
+    <!-- start form -->
+   <div class="row">
+      <div class="col-lg-6">
+        <div class="card card-default">
+          <div class="card-header">
+            New Member Sign-Up
+          </div>
+          <div class="card-body">
 
-          </form>
-        <!-- end form -->
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Most Recent Member!</h5>
-          <h6 class="card-subtitle mb-2 text-muted"></h6>
-          <p class="card-text" id = "usernameRecent"></p>
-          <p class="card-text" id = "emailRecent"></p>
+
+
+            <form role="form">
+              <div class="form-group row">
+                <label for="name-input">First and Last Name:</label>
+                <input class="form-control" id="name-input" type="text">
+              </div>
+              <div class="form-group row">
+                <label for="email-input">Email: (NOT DISPLAYED or Shared with anyone)</label>
+                <input class="form-control" id="email-input" type="email">
+              </div>
+              <div class="form-group row">
+                <label for="Parks">How many parks have you been to?:</label>
+                <input class="form-control" id="Parks-input" type="number">
+              </div>
+              <div class="form-group row">
+                <label for="comment-input">Tell us about your Favorit Park!</label>
+                <textarea class="form-control" rows="5" id="comment-input"></textarea>
+              </div>
+              <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card card-default">
+          <div class="card-header">
+            Most Recent Member
+          </div>
+          <div class="card-body" id="recent-member">
+            <h2 id="name-display"></h2>
+            <h4 id="email-display"></h4>
+            <h4 id="Parks-display"></h4>
+            <p id="comment-display"></p>
+          </div>
         </div>
       </div>
 
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    <input class="form-control form-control-lg" id = "username" type="text" placeholder="username">
-    <input class="form-control form-control-lg" id = "password" type="text" placeholder="password">
-    <input class="form-control form-control-lg" id = "name" type="text" placeholder="name">
-    <input class="form-control form-control-lg" id = "address" type="text" placeholder="address">
-    <input class="form-control form-control-lg" id = "city" type="text" placeholder="city">
-    <input class="form-control form-control-lg" id = "state" type="text" placeholder="state">
-    <input class="form-control form-control-lg" id = "phone" type="text" placeholder="phone">
-    <button type="button" class="btn btn-primary btn-lg" id = "send">submit button</button>
+    </div>
+  </div>
+  </div>
 
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
-
-<script>
-
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyC73zK4YukhMCJK5lWLf-tVG4o8puu7ghY",
-    authDomain: "travelcompanion-1552603994765.firebaseapp.com",
-    databaseURL: "https://travelcompanion-1552603994765.firebaseio.com",
-    projectId: "travelcompanion-1552603994765",
-    storageBucket: "travelcompanion-1552603994765.appspot.com",
-    messagingSenderId: "829513388096"
-  };
-
-  firebase.initializeApp(config);
-
-  var database = firebase.database();
-
-  var email = "";
-  var username = "";
-  var password = "";
-  var name = "";
-  var address = "";
-  var city = "";
-  var state = "";
-  var phone = "";
-
-  $("#send").on("click", function(event) {
-
-    event.preventDefault();
-
-    email = $("#exampleFormControlInput1").val().trim();
-    username   = $("#username").val().trim();
-    password  = $("#password").val().trim();
-    name  = $("#name").val().trim();
-    address  = $("#address").val().trim();
-    state  = $("#state").val().trim();
-    phone  = $("#phone").val().trim();
-
-    database.ref().set({
-        email: email,
-        username: username,
-        password: password,
-        name: name,
-        address: address,
-        state: state,
-        phone: phone
-
-    })
-    database.ref().on("value", function(snapshot) {
-    console.log(snapshot.val().email)
-    console.log(snapshot.val().username)
-    console.log(snapshot.val().password)
-    console.log(snapshot.val().name)
-    console.log(snapshot.val().address)
-    console.log(snapshot.val().state)
-    console.log(snapshot.val().phone)
-
-    $(".card-subtitle mb-2 text-muted").text(snapshot.val().name)
-    $("#usernameRecent").text(snapshot.val().username)
-    $("#emailRecent").text(snapshot.val().email)
-    
-  }, function(errorObject) {
-      console.log("Errors handled: " + errorObject.code);
-    })
-})
   
+  <script src="https://code.jquery.com/jquery.js"></script>
 
+  
+  <script>
+   
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDp2erCZfymId-iTkNBuR0H3LC8pHtcYYA",
+      authDomain: "parks-57d3e.firebaseapp.com",
+      databaseURL: "https://parks-57d3e.firebaseio.com",
+      projectId: "parks-57d3e",
+      storageBucket: "parks-57d3e.appspot.com",
+      messagingSenderId: "776058284216"
+    };
 
+    firebase.initializeApp(config);
 
-// <script
-// src="https://code.jquery.com/jquery-3.3.1.min.js"
-// integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-// crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    // Create a variable to reference the database.
+    var database = firebase.database();
+
+    // Values
+    var name = "";
+    var email = "";
+    var Parks = 0;
+    var comment = "";
+    $("#add-user").on("click", function (event) {
+      event.preventDefault();
+
+      // Grabbed values from text boxes
+      name = $("#name-input").val().trim();
+      email = $("#email-input").val().trim();
+      Parks = $("#Parks-input").val().trim();
+      comment = $("#comment-input").val().trim();
+
+      // pushing to Firebase db
+      database.ref().push({
+        name: name,
+        email: email,
+        Parks: Parks,
+        comment: comment,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+      });
+
+    });
+
+    database.ref().on("child_added", function (snapshot) {
+      var sv = snapshot.val();
+      // display last user.
+      $("#name-display").text("Visitor Name: " +sv.name);
+      // $("#email-display").text(sv.email);
+      $("#Parks-display").text("I have been to: " +sv.Parks+ " National Parks");
+      $("#comment-display").text(sv.comment);
+
+    }, function (errorObject) {
+      console.log("Errors handled: " + errorObject.code);
+    });
+  </script>
+
 </body>
+
 </html>
