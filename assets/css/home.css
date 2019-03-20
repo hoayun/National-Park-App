@@ -1,10 +1,10 @@
 body{
-    background-image: url(../images/imagehomes/bround.jpg);
+    background-image: url(../images/bround.jpg);
     background-size: auto
     
 }
-.spacer10 { 
-    height: 10px;
+.spacer25 { 
+    height: 25px;
      width: 100%;
     font-size: 0;
      margin: 0;

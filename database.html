@@ -1,62 +1,75 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>National Park Finder</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Assistant|Libre+Franklin|Nanum+Gothic" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css">
-   
+  <title>National Park Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Assistant|Libre+Franklin|Nanum+Gothic" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css">
+
 </head>
-<body>
-<div class="container">
- <nav>
-    
-        <div class="nav-wrapper">
-            <a href="#!" class="brand-logo center"><i class="large material-icons" style="font-size: 80px; margin: 20px;">fingerprint
-               </i></a>
-            <ul class="right hide-on-med-and-down">
-            </ul>
-        <div class="dropdown">
-                    <button class="btn btn-flat dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      States | E x p l o r e 
-                      <h1 class="text-center" id="selectedstate" style="font-size: 30px; color:  rgb(87, 81, 67);"></h1>
-                    </button>
-                   
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        
-                    </div>
-                  </div>
-        </div>
-        </nav>
-        <div class="mainrow">
-          
-          <div class="row">
-            <h1 id="parknames" class="col-md-4 title">State Parks</h1>
-            <h1 id="parkweather" class="col-md-4 title">Park Weather</h1>
-            <h1 id="parkphotos" class="col-md-4 title">Photo Gallery</h1>
-          </div>
 
+<body>
+
+  <div class="container">
+    <nav>
+      <div class="nav-wrapper">
+        <!-- <a href="#!" class="brand-logo center"><i class="large material-icons" style="font-size: 80px; margin: 20px;">fingerprint -->
+        </i></a>
+        <ul class="right hide-on-med-and-down">
+          </li>
+
+        </ul>
+        <div class="dropdown">
+          <button class="btn btn-flat dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            States | E x p l o r e
+            <h1 class="text-center" id="selectedstate" style="font-size: 30px; color:  rgb(87, 81, 67);"></h1>
+          </button>
+          <button type="button" class="btn btn-flat btn btn-link" onclick="window.location.href='index.html'">Welcome</button>
+         <button type="button" class="btn btn-flat btn btn-link" onclick="window.location.href='database.html'">Park Finder</button>
+          <button type="button" class="btn btn-flat btn btn-link" onclick="window.location.href='firebase.html'">Join US</button>
+    
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="mainrow">
+
+      <div class="row">
+        <h1 id="parknames" class="col-md-4 title">State Parks</h1>
+        <h1 id="parkweather" class="col-md-4 title">Park Weather</h1>
+        <h1 id="parkphotos" class="col-md-4 title">Photo Gallery</h1>
       </div>
 
-       
-        <div class= row>
-        <div class="park col-md-4"></div>
-        <div class="weather col-md-4"></div>
-        <div id = "pic" class="col-md-3"></div>
-        </div>
-</div>
-      
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="assets/javascript/app.js"></script>
+    </div>
+
+
+    <div class=row>
+      <div class="park col-md-4"></div>
+      <div class="weather col-md-4"></div>
+      <div id="pic" class="col-md-3"></div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="assets/javascript/app.js"></script>
 
 </body>
+
 </html>
