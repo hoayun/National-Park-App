@@ -17,8 +17,8 @@ git commit
 Motivation:=====> kyle
 
 
-Features:======> Joe
-
+Features:======> 
+National Parks Finder Ver 1.0.0 is a full featured web application that allows is users to look for national parks by states, and get real time weather information, along with photos of parks from the selected state.  This application also allows the user to share their information with the National Parks Finder Team, so that we can then use the information provided to let them know of up coming events, or share news.   In future versions we will incorporate more features, like photo sharing, and “find a friend to hike with”, just to name a few.   
 
 
 Build status:
