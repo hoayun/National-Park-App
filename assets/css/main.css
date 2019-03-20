@@ -1,5 +1,5 @@
 nav {
-    background-color:  #f7edca;
+    background-color:  #f7edca!important;
     height: 109px;
     border-radius: 25px;
 
@@ -66,7 +66,7 @@ a {
 }
 #selectedstate{
     color: rgb(196, 166, 35);
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Libre Franklin;
     font-size: 48px;
 
 }
@@ -84,5 +84,13 @@ a {
     background-color:  #f7edcadb;
     border-radius: 25px;
     margin-top: 20px;
+}
+
+.nav-item {
+    align-items: left;
+}
+
+.bg-light {
+    background-color:  #f7edca!important;
 }
 
