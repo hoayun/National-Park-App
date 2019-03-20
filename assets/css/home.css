@@ -3,6 +3,7 @@ body{
     background-attachment: fixed;
     border-radius: 25px;
     font-weight: 200;
+    margin: 30px; 
     
 }
 .spacer10 { 
@@ -39,10 +40,11 @@ nav {
 .btn {
     margin-left: auto;
     margin-right: auto;
+    
 }
 
 #navbarText {
-    margin-left: 200px;
+    margin-left: 300px;
 }
 
 .container {
@@ -51,4 +53,9 @@ nav {
     border-radius: 25px;
     
 
+}
+
+.nav-item {
+    margin-right: 10px;
+    
 }
