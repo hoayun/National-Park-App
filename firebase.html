@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
   crossorigin="anonymous">
 <link rel="stylesheet" href="assets/css/home.css">
@@ -21,27 +21,31 @@
     <div class = "col-md-12">
       <!-- Nav Bar for homepage and contact us page -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">National Park Finder</a>
+          <a class="navbar-brand" href="#">National Park Finder |
+             <br>  <span class="navbar-text">
+                Your 50 State National Park Finder |
+              </span>
+              
+          </a>
+         
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <button type="button" class="btn btn-link"onclick="window.location.href='index.html'">Welcome</button>
-              </li>
-              <li class="nav-item">
-                <!-- <button type="button" class="btn btn-default">Default</button> -->
-                <!-- <a class="nav-link" href="#park">Park Finder</a> -->
-                <button type="button" class="btn btn-link" onclick="window.location.href='database.html'">Park Finder</button>
-              </li>
-              <li class="nav-item">
-                <button type="button" class="btn btn-link"onclick="window.location.href='firebase.html'">Contact US</button>          </li>
-            </ul>
-            <span class="navbar-text">
-              Your 50 state National Park Finder
-            </span>
+            <div>
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <button type="button" class="btn btn-outline-secondary btn-sm"onclick="window.location.href='index.html'">WELCOME |</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-outline-secondary btn-sm"onclick="window.location.href='database.html'">PARK FINDER |</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-outline-secondary btn-sm"onclick="window.location.href='firebase.html'">SAY HELLO |</button>
+                  </li>
+              </ul>
+            </div>
           </div>
         </nav>
       </div>
@@ -74,7 +78,7 @@
                 <input class="form-control" id="Parks-input" type="number">
               </div>
               <div class="form-group row">
-                <label for="comment-input">Tell us about your Favorit Park!</label>
+                <label for="comment-input">Tell us about your Favorite Park!</label>
                 <textarea class="form-control" rows="5" id="comment-input"></textarea>
               </div>
               <button class="btn btn-link" id="add-user" type="submit">Submit</button>
