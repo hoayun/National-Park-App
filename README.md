@@ -11,28 +11,27 @@ git add
 git commit
 ```
 
-#National Park Finder 
+#National Park Finder#
 
 
-Motivation:=====> kyle
+Motivation:=====> Chris
+
 
 
 Features:======> Joe
 
 
 
-Build status:
+Screenshots:=====> (if needed in features)
 
 
-Code style:
 
-
-Screenshots:
-
-
-Tech/Framework used:=====> kyle
+Tech/Framework used:=====> Rose
         built with:
             -bootstrap
+            -firebase
+            -materialise
+            -ect.
 
 
 
@@ -42,17 +41,19 @@ API Reference:=====> kyle
 
 
 
-How to use?:=====> joe
+How to use?:=====> Joe -review by Rose
 
 
 
-Contribute: https://github.com/zulip/zulip-electron/blob/master/CONTRIBUTING.md=====> kyle
+Contribute: https://github.com/zulip/zulip-electron/blob/master/CONTRIBUTING.md =====> kyle
 
 
-Credits:
+
+Credits: =================================>>> Everyone
     kyle padilla: github link
     Joe Falcs: github link
     rose mcClain: github link
+    chris: ""
 
 
 Licence:
